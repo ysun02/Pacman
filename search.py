@@ -82,6 +82,7 @@ def generic_search(problem, fringe, addFringe):
     while not fringe.isEmpty():
         (here, action, cost) = fringe.pop()
         if problem.isGoalState(here):
+            fringe = None
             return action
         elif here not in close:
             close.add(here)
